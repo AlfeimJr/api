@@ -30,7 +30,7 @@ export class UserController {
 
   @ApiOperation({ summary: 'Criar usuário' })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
-  @Post()
+  @Post('/create')
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
