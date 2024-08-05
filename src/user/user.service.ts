@@ -21,7 +21,6 @@ export class UserService {
       throw new ConflictException('Usuario ja existe ');
     }
 
-    // Salva o novo usuário
     return this.userRepository.save(createUserDto);
   }
 

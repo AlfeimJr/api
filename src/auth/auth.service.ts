@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { error } from 'console';
 import { LoginService } from 'src/login/login.service';
 
 @Injectable()
@@ -15,7 +16,7 @@ export class AuthService {
       const { password, ...result } = user;
       return result;
     }
-    return null;
+    return error('Usuário ou senha inválidos');
   }
 
   async login(user: any) {
